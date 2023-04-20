@@ -460,7 +460,7 @@ CREATE DATABASE database_name;
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    514
+                    700
                 </div>
                 
 
@@ -486,12 +486,12 @@ CREATE DATABASE database_name;
 </ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol>
+<ol start="2">
 <li>选择数据库：</li>
 </ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">USE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol>
+<ol start="3">
 <li>创建表：</li>
 </ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> table_name <span class="token punctuation">(</span>
@@ -501,38 +501,38 @@ CREATE DATABASE database_name;
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ol>
+<ol start="4">
 <li>插入数据：</li>
 </ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> table_name <span class="token punctuation">(</span>column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> column3<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> 
 <span class="token keyword">VALUES</span> <span class="token punctuation">(</span>value1<span class="token punctuation">,</span> value2<span class="token punctuation">,</span> value3<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<ol>
+<ol start="5">
 <li>查询数据：</li>
 </ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token keyword">FROM</span> table_name
 <span class="token keyword">WHERE</span> condition<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<ol>
+<ol start="6">
 <li>更新数据：</li>
 </ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">UPDATE</span> table_name
 <span class="token keyword">SET</span> column1 <span class="token operator">=</span> value1<span class="token punctuation">,</span> column2 <span class="token operator">=</span> value2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token keyword">WHERE</span> condition<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<ol>
+<ol start="7">
 <li>删除数据：</li>
 </ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> table_name
 <span class="token keyword">WHERE</span> condition<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<ol>
+<ol start="8">
 <li>删除表：</li>
 </ol>
 <pre class="line-numbers language-pgsql" data-language="pgsql"><code class="language-pgsql">DROP TABLE table_name;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol>
+<ol start="9">
 <li>删除数据库：</li>
 </ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">DATABASE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -541,12 +541,61 @@ CREATE DATABASE database_name;
 <p>MySQL 是一种功能强大的数据库管理系统，它支持广泛的 SQL 语言特性和功能。以下是一些进阶的 MySQL 语法：</p>
 <ol>
 <li>聚合函数：MySQL 支持多种聚合函数，如 COUNT, SUM, AVG, MIN, MAX 等。这些函数可以用于计算某个列的总数、平均值、最大值、最小值等等。</li>
+</ol>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">FROM</span> table_name<span class="token punctuation">;</span> <span class="token comment">-- 计算表中总行数</span>
+
+<span class="token keyword">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>column_name<span class="token punctuation">)</span> <span class="token keyword">FROM</span> table_name<span class="token punctuation">;</span> <span class="token comment">-- 计算某一列的平均值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
 <li>JOIN：JOIN 操作可以将两个或多个表中的行连接起来。MySQL 支持多种 JOIN 操作，如 INNER JOIN, LEFT JOIN, RIGHT JOIN 等。</li>
+</ol>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> table1
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> table2
+<span class="token keyword">ON</span> table1<span class="token punctuation">.</span>column_name <span class="token operator">=</span> table2<span class="token punctuation">.</span>column_name<span class="token punctuation">;</span> <span class="token comment">-- 内连接两个表</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> table1
+<span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> table2
+<span class="token keyword">ON</span> table1<span class="token punctuation">.</span>column_name <span class="token operator">=</span> table2<span class="token punctuation">.</span>column_name<span class="token punctuation">;</span> <span class="token comment">-- 左连接两个表</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
 <li>子查询：子查询是一个嵌套在其他查询中的查询语句。使用子查询可以在执行查询时动态生成一个结果集，然后将其用于主查询中。</li>
+</ol>
+<pre class="line-numbers language-pgsql" data-language="pgsql"><code class="language-pgsql">SELECT *
+FROM table_name
+WHERE column_name IN (SELECT column_name FROM another_table); -- 在查询中使用子查询<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
 <li>索引：索引是一种数据结构，可以加快数据库查询的速度。MySQL 支持多种索引类型，如 B-Tree, Hash 等。</li>
+</ol>
+<pre class="line-numbers language-pgsql" data-language="pgsql"><code class="language-pgsql">CREATE INDEX index_name ON table_name (column_name); -- 在表中创建索引<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="5">
 <li>存储过程和函数：存储过程和函数是一种在数据库中保存的程序代码，可以被多个应用程序调用。使用存储过程和函数可以实现复杂的数据处理逻辑。</li>
+</ol>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> procedure_name<span class="token punctuation">(</span>param1 <span class="token keyword">INT</span><span class="token punctuation">,</span> param2 <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+    <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> table_name <span class="token keyword">WHERE</span> column1 <span class="token operator">=</span> param1 <span class="token operator">AND</span> column2 <span class="token operator">=</span> param2<span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span> <span class="token comment">-- 创建存储过程</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">FUNCTION</span> function_name<span class="token punctuation">(</span>param <span class="token keyword">INT</span><span class="token punctuation">)</span> <span class="token keyword">RETURNS</span> <span class="token keyword">INT</span>
+<span class="token keyword">BEGIN</span>
+    <span class="token keyword">DECLARE</span> result <span class="token keyword">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword">SET</span> result <span class="token operator">=</span> param <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">RETURN</span> result<span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span> <span class="token comment">-- 创建函数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="6">
 <li>触发器：触发器是一种特殊的程序代码，可以在数据库中特定的事件发生时被自动执行。MySQL 支持多种触发器类型，如 BEFORE INSERT, AFTER INSERT 等。</li>
 </ol>
+<pre class="line-numbers language-pgsql" data-language="pgsql"><code class="language-pgsql">CREATE TRIGGER trigger_name BEFORE INSERT ON table_name
+FOR EACH ROW
+BEGIN
+   SET NEW.column_name = NOW(); -- 在插入数据前设置时间戳
+END;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这些是一些示例，实际上还有很多其他用法和选项。</p>
 <p>这些是 MySQL 的一些进阶语法，它们可以帮助你更好地管理和处理数据库。</p>
 
                 
@@ -1294,7 +1343,7 @@ CREATE DATABASE database_name;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7k</span>
+                        class="white-color">7.2k</span>
             
             
             
