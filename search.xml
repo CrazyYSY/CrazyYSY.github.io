@@ -4,13 +4,27 @@
   
     
     <entry>
-      <title></title>
+      <title>第五周java预习</title>
       <link href="/2023/04/20/di-wu-zhou-java-yu-xi/"/>
       <url>/2023/04/20/di-wu-zhou-java-yu-xi/</url>
       
         <content type="html"><![CDATA[<p>MySQL 是一种关系型数据库管理系统，它支持 SQL (Structured Query Language) 语言。下面是 MySQL 的一些基础语法：</p><ol><li>创建数据库：</li></ol><pre class="line-numbers language-n1ql" data-language="n1ql"><code class="language-n1ql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol><li>选择数据库：</li></ol><pre class="line-numbers language-abnf" data-language="abnf"><code class="language-abnf"><span class="token rule">USE</span> <span class="token rule">database_name</span><span class="token comment">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol><li>创建表：</li></ol><pre class="line-numbers language-elm" data-language="elm"><code class="language-elm"><span class="token constant">CREATE</span> <span class="token constant">TABLE</span> <span class="token hvariable">table_name</span> <span class="token punctuation">(</span>    <span class="token hvariable">column1</span> <span class="token hvariable">datatype</span><span class="token punctuation">,</span>    <span class="token hvariable">column2</span> <span class="token hvariable">datatype</span><span class="token punctuation">,</span>    <span class="token hvariable">column3</span> <span class="token hvariable">datatype</span><span class="token punctuation">,</span>    <span class="token operator">...</span><span class="token punctuation">)</span>;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol><li>插入数据：</li></ol><pre class="line-numbers language-apache" data-language="apache"><code class="language-apache">INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><ol><li>查询数据：</li></ol><pre class="line-numbers language-pgsql" data-language="pgsql"><code class="language-pgsql">SELECT column1, column2, ...FROM table_nameWHERE condition;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ol><li>更新数据：</li></ol><pre class="line-numbers language-apache" data-language="apache"><code class="language-apache">UPDATE table_nameSET column1 = value1, column2 = value2, ...WHERE condition;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ol><li>删除数据：</li></ol><pre class="line-numbers language-pgsql" data-language="pgsql"><code class="language-pgsql">DELETE FROM table_nameWHERE condition;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><ol><li>删除表：</li></ol><pre class="line-numbers language-pgsql" data-language="pgsql"><code class="language-pgsql">DROP TABLE table_name;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol><li>删除数据库：</li></ol><pre class="line-numbers language-n1ql" data-language="n1ql"><code class="language-n1ql"><span class="token keyword">DROP</span> <span class="token keyword">DATABASE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这些是 MySQL 的基础语法，还有其他许多复杂的和高级的语法可以用于更高级的操作。</p><p>MySQL 是一种功能强大的数据库管理系统，它支持广泛的 SQL 语言特性和功能。以下是一些进阶的 MySQL 语法：</p><ol><li>聚合函数：MySQL 支持多种聚合函数，如 COUNT, SUM, AVG, MIN, MAX 等。这些函数可以用于计算某个列的总数、平均值、最大值、最小值等等。</li><li>JOIN：JOIN 操作可以将两个或多个表中的行连接起来。MySQL 支持多种 JOIN 操作，如 INNER JOIN, LEFT JOIN, RIGHT JOIN 等。</li><li>子查询：子查询是一个嵌套在其他查询中的查询语句。使用子查询可以在执行查询时动态生成一个结果集，然后将其用于主查询中。</li><li>索引：索引是一种数据结构，可以加快数据库查询的速度。MySQL 支持多种索引类型，如 B-Tree, Hash 等。</li><li>存储过程和函数：存储过程和函数是一种在数据库中保存的程序代码，可以被多个应用程序调用。使用存储过程和函数可以实现复杂的数据处理逻辑。</li><li>触发器：触发器是一种特殊的程序代码，可以在数据库中特定的事件发生时被自动执行。MySQL 支持多种触发器类型，如 BEFORE INSERT, AFTER INSERT 等。</li></ol><p>这些是 MySQL 的一些进阶语法，它们可以帮助你更好地管理和处理数据库。</p>]]></content>
       
       
+      <categories>
+          
+          <category> JAVA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JAVA </tag>
+            
+            <tag> 预习作业 </tag>
+            
+        </tags>
       
     </entry>
     
