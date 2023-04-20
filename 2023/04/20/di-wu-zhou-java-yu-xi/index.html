@@ -484,48 +484,48 @@ CREATE DATABASE database_name;
 <ol>
 <li>创建数据库：</li>
 </ol>
-<pre class="line-numbers language-n1ql" data-language="n1ql"><code class="language-n1ql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol>
 <li>选择数据库：</li>
 </ol>
-<pre class="line-numbers language-abnf" data-language="abnf"><code class="language-abnf"><span class="token rule">USE</span> <span class="token rule">database_name</span><span class="token comment">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">USE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol>
 <li>创建表：</li>
 </ol>
-<pre class="line-numbers language-elm" data-language="elm"><code class="language-elm"><span class="token constant">CREATE</span> <span class="token constant">TABLE</span> <span class="token hvariable">table_name</span> <span class="token punctuation">(</span>
-    <span class="token hvariable">column1</span> <span class="token hvariable">datatype</span><span class="token punctuation">,</span>
-    <span class="token hvariable">column2</span> <span class="token hvariable">datatype</span><span class="token punctuation">,</span>
-    <span class="token hvariable">column3</span> <span class="token hvariable">datatype</span><span class="token punctuation">,</span>
-    <span class="token operator">...</span>
-<span class="token punctuation">)</span>;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> table_name <span class="token punctuation">(</span>
+    column1 datatype<span class="token punctuation">,</span>
+    column2 datatype<span class="token punctuation">,</span>
+    column3 datatype<span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol>
 <li>插入数据：</li>
 </ol>
-<pre class="line-numbers language-apache" data-language="apache"><code class="language-apache">INSERT INTO table_name (column1, column2, column3, ...) 
-VALUES (value1, value2, value3, ...);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> table_name <span class="token punctuation">(</span>column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> column3<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> 
+<span class="token keyword">VALUES</span> <span class="token punctuation">(</span>value1<span class="token punctuation">,</span> value2<span class="token punctuation">,</span> value3<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol>
 <li>查询数据：</li>
 </ol>
-<pre class="line-numbers language-pgsql" data-language="pgsql"><code class="language-pgsql">SELECT column1, column2, ...
-FROM table_name
-WHERE condition;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">FROM</span> table_name
+<span class="token keyword">WHERE</span> condition<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol>
 <li>更新数据：</li>
 </ol>
-<pre class="line-numbers language-apache" data-language="apache"><code class="language-apache">UPDATE table_name
-SET column1 = value1, column2 = value2, ...
-WHERE condition;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">UPDATE</span> table_name
+<span class="token keyword">SET</span> column1 <span class="token operator">=</span> value1<span class="token punctuation">,</span> column2 <span class="token operator">=</span> value2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">WHERE</span> condition<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol>
 <li>删除数据：</li>
 </ol>
-<pre class="line-numbers language-pgsql" data-language="pgsql"><code class="language-pgsql">DELETE FROM table_name
-WHERE condition;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> table_name
+<span class="token keyword">WHERE</span> condition<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol>
 <li>删除表：</li>
@@ -535,7 +535,7 @@ WHERE condition;<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <ol>
 <li>删除数据库：</li>
 </ol>
-<pre class="line-numbers language-n1ql" data-language="n1ql"><code class="language-n1ql"><span class="token keyword">DROP</span> <span class="token keyword">DATABASE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">DATABASE</span> database_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>这些是 MySQL 的基础语法，还有其他许多复杂的和高级的语法可以用于更高级的操作。</p>
 <p>MySQL 是一种功能强大的数据库管理系统，它支持广泛的 SQL 语言特性和功能。以下是一些进阶的 MySQL 语法：</p>
