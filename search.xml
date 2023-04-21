@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Vup设备选购指南</title>
+      <link href="/2023/04/21/zhi-bo-she-bei-xuan-gou-zhi-nan/"/>
+      <url>/2023/04/21/zhi-bo-she-bei-xuan-gou-zhi-nan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>主要是在看完很多视频总结得来, 所以可能会撞车, 侵删.</p><p>贴一下链接</p><p><a href="https://www.bilibili.com/video/BV1A3411y7WN">新人vup设备选择指南·麦克风篇</a></p><p><a href="https://www.bilibili.com/video/BV1e34y1W759">【VUP入门手册】直播硬件设备的推荐</a></p><p>如果不播游戏只做杂谈的话,对各方面的要求会低很多.</p><p>具体来讲需要的有</p><ol><li>电脑</li><li>麦克风和声卡</li><li>耳机</li><li>OBS具体使用</li><li>摄像头</li></ol><h3 id="电脑"><a href="#电脑" class="headerlink" title="电脑"></a>电脑</h3><p>配置足够即可,根据个人需求选择配置就好</p><h3 id="麦克风"><a href="#麦克风" class="headerlink" title="麦克风"></a>麦克风</h3><p>这个讲究多一点, 具体分为电容麦克风, 电动麦克风.</p><h4 id="电容麦克风"><a href="#电容麦克风" class="headerlink" title="电容麦克风"></a>电容麦克风</h4><p>灵敏度高, 乐器和人声声音细节都很不错, 但是对使用环境要求很高, 空旷或缺少吸音物品的房间, 会有严重的回音和混响感. 而且环境噪音也很容易被收入. 所以对自己环境不自信的可以试试动圈麦克风.</p><h4 id="动圈麦克风"><a href="#动圈麦克风" class="headerlink" title="动圈麦克风"></a>动圈麦克风</h4><p>动圈麦是电动麦的一种, 它的灵敏度很低, 一般来说动圈麦录制的声音低频较多,高频较少,会显得人声很闷. 但是对环境要求不高. 可以说是优缺点显著.</p><h4 id="铝带麦克风"><a href="#铝带麦克风" class="headerlink" title="铝带麦克风"></a>铝带麦克风</h4><p>电动麦克风的一种. 贵! 难维护,建议不要买.</p><h4 id="具体推荐的话"><a href="#具体推荐的话" class="headerlink" title="具体推荐的话"></a>具体推荐的话</h4><h5 id="初期我推荐usb类麦克风-这种麦克风都自带声卡-省去很多麻烦"><a href="#初期我推荐usb类麦克风-这种麦克风都自带声卡-省去很多麻烦" class="headerlink" title="初期我推荐usb类麦克风,这种麦克风都自带声卡,省去很多麻烦."></a>初期我推荐usb类麦克风,这种麦克风都自带声卡,省去很多麻烦.</h5><p>写的单价是未优惠售价(现在电商这个环境,几乎每天都打折,所以可以酌情降低100左右或自查一下)</p><ol><li><p>电容麦的有罗技的Blue Yeti </p><p>官方单价999 (京东)</p></li><li><p>动圈麦的有山逊的 SAMSON Q2U</p><p>官方单价399 (京东)</p></li><li><p>动圈麦 SAMSON Q9U (歌势推荐)</p><p>官方单价1288 (京东)</p></li><li><p>动圈麦 Shure MV7 (歌势推荐)</p><p>官方单价1888 (京东)</p></li><li><p>电容麦 闪客au-902</p><p>官方单价499 (京东)</p></li><li><p>电容麦 NEAT widget</p><p>官方单价200+ (京东)</p></li><li><p>电容麦 山逊c01U pro</p><p>官方单价499 (京东)</p></li></ol><p><span class="heimu" title="你知道的太多了">理论来讲,电容麦都(可以录奥数)(个人xp)</span></p><h5 id="独立麦克风的话我对于话放和声卡了解不多暂时不做推荐-以后会更新"><a href="#独立麦克风的话我对于话放和声卡了解不多暂时不做推荐-以后会更新" class="headerlink" title="独立麦克风的话我对于话放和声卡了解不多暂时不做推荐(以后会更新)"></a>独立麦克风的话我对于话放和声卡了解不多暂时不做推荐(以后会更新)</h5><h5 id="一个省钱小技巧"><a href="#一个省钱小技巧" class="headerlink" title="一个省钱小技巧"></a>一个省钱小技巧</h5><p>3.5mm带麦耳机，买大厂，稍微好一点的。<br>耳机带好后把带麦克那边绕过下巴别到另一只耳朵上，然后保证麦克在你下巴的位置<br>然后如果是obs推流可以用声音滤镜调整降噪和混响<br>效果不比便宜的usb麦差哦</p><h3 id="耳机"><a href="#耳机" class="headerlink" title="耳机"></a>耳机</h3><p>有监听耳机最好,没有的话手头有什么耳机用就行了(歌势最好还是监听)</p><h3 id="OBS"><a href="#OBS" class="headerlink" title="OBS"></a>OBS</h3><p>OBS网上教程很多, 根据个人配置不同参数也不同, 所以只能自己去摸索.</p><p>当然觉得麻烦的话可以直接使用直播姬和Vtube Studio的推流也是可以的</p><h3 id="摄像头"><a href="#摄像头" class="headerlink" title="摄像头"></a>摄像头</h3><ol><li>3d摄像头</li></ol><p>这种方案不吃电脑性能</p><p>最早我知道的是hololive使用iphone的Arkit在现在也是不错的选择. (前提是有个iphone或者ipad), 而且在面捕过程中手机不可以充电,所以以前在看holo直播时偶尔会看到突然掉面捕的情况. </p><p>安卓也有一个Arcore的方案,但是支持机型比较阴间   <a href="https://zhuanlan.zhihu.com/p/61970665">点一下这个 可以自己查查看(ctrl+f可以在网页内快速查找)</a></p><ol start="2"><li>2d摄像头</li></ol><p>其实就是电脑自带或者其他usb摄像头</p><p>参数主要就三个 分辨率,帧速率和可视角度.(都是越高越吃性能)</p><p>基本要求 1080p 30fps &gt;=70°即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vup运营 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 直播设备 </tag>
+            
+            <tag> Vup </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第五周java预习</title>
       <link href="/2023/04/20/di-wu-zhou-java-yu-xi/"/>
       <url>/2023/04/20/di-wu-zhou-java-yu-xi/</url>
