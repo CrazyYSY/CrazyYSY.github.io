@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>第六周java预习 | CY_blog</title><meta name="author" content="CrazyYSY"><meta name="copyright" content="CrazyYSY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="JDBC简介JDBC（Java Database Connectivity）是Java语言中用于与关系型数据库进行交互的标准API。它提供了一组用于执行SQL语句、处理结果集和管理数据库连接的类和接口。 使用JDBC，开发人员可以通过Java程序与各种关系型数据库进行交互，如Oracle、MySQL、Microsoft SQL Server等。JDBC提供了一种标准的方式来连接和操作这些不同的数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第六周java预习">
+<meta property="og:url" content="http://crazyysy.github.io/2023/05/07/di-liu-zhou-java-yu-xi/index.html">
+<meta property="og:site_name" content="CY_blog">
+<meta property="og:description" content="JDBC简介JDBC（Java Database Connectivity）是Java语言中用于与关系型数据库进行交互的标准API。它提供了一组用于执行SQL语句、处理结果集和管理数据库连接的类和接口。 使用JDBC，开发人员可以通过Java程序与各种关系型数据库进行交互，如Oracle、MySQL、Microsoft SQL Server等。JDBC提供了一种标准的方式来连接和操作这些不同的数据">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://crazyysy.github.io/img/banner/5.jpg">
+<meta property="article:published_time" content="2023-05-07T03:23:23.000Z">
+<meta property="article:modified_time" content="2023-05-07T06:36:52.757Z">
+<meta property="article:author" content="CrazyYSY">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="预习作业">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://crazyysy.github.io/img/banner/5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://crazyysy.github.io/2023/05/07/di-liu-zhou-java-yu-xi/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '第六周java预习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-07 14:36:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = 'hidden';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+
+preloader.initLoading()
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐推荐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频推荐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner/5.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="CY_blog"><span class="site-name">CY_blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐推荐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频推荐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">第六周java预习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-07T03:23:23.000Z" title="发表于 2023-05-07 11:23:23">2023-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-07T06:36:52.757Z" title="更新于 2023-05-07 14:36:52">2023-05-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/JAVA/">JAVA</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/2023/05/07/di-liu-zhou-java-yu-xi/" data-flag-title="第六周java预习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>JDBC（Java Database Connectivity）是Java语言中用于与关系型数据库进行交互的标准API。它提供了一组用于执行SQL语句、处理结果集和管理数据库连接的类和接口。</p>
+<p>使用JDBC，开发人员可以通过Java程序与各种关系型数据库进行交互，如Oracle、MySQL、Microsoft SQL Server等。JDBC提供了一种标准的方式来连接和操作这些不同的数据库，而不需要了解每个数据库的具体实现细节。</p>
+<p>JDBC的核心接口包括：</p>
+<ul>
+<li>DriverManager：用于管理数据库的驱动程序。</li>
+<li>Connection：表示与数据库的连接。</li>
+<li>Statement：用于执行SQL语句。</li>
+<li>PreparedStatement：与Statement类似，但可以更有效地执行重复的SQL语句。</li>
+<li>ResultSet：表示从数据库返回的结果集。</li>
+</ul>
+<p>使用JDBC，开发人员可以编写Java程序来执行各种数据库操作，例如查询数据、插入、更新和删除数据等。JDBC也可以与Java的其他数据访问技术（如Java Persistence API（JPA）和Hibernate）一起使用，以便更方便地管理数据库访问。</p>
+<h4 id="二、JDBC执行步骤"><a href="#二、JDBC执行步骤" class="headerlink" title="二、JDBC执行步骤"></a>二、JDBC执行步骤</h4><p>1.导入驱动jar包<br>导入jar包步骤</p>
+<p>1.在你的web-INF目录下创建一个lib包，专门放置jar包<br>2.将jar包复制到lib路径下<br>3.右键单击，选择add as library<br>4.将level改成module library 点击OK<br>如果你的lib路径下的jar包有以下小箭头，就添加成功了</p>
+<p>2.注册驱动</p>
+<pre><code>Class.forName("com.mysql.jdbc.Driver");
+</code></pre>
+<p>3.获取连接</p>
+<pre><code>Connection connection = DriverManager.getConnection(url, username, password);
+</code></pre>
+<p>4.定义SQL语句</p>
+<pre><code>String sql = "sql语句";
+</code></pre>
+<p>5.获取执行SQl对象</p>
+<pre class="line-numbers language-none"><code class="language-none">Statement statement = connection.createStatement();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>6.执行sql语句</p>
+<pre class="line-numbers language-none"><code class="language-none">statement.executeUpdate(sql);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>7.处理结果</p>
+<p>8.释放资源</p>
+<pre class="line-numbers language-none"><code class="language-none">statement.close();
+connection.close();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>试例</p>
+<pre class="line-numbers language-none"><code class="language-none">package com.example.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class jdbcdemo {
+    public static void main(String[] args) throws Exception {
+//        1.注册驱动
+        Class.forName("com.mysql.jdbc.Driver");
+
+//        2.获取连接
+        String url = "jdbc:mysql://127.0.0.1:3306/dbcsdn";
+        String username = "root";
+        String password = "1234";
+        Connection connection = DriverManager.getConnection(url, username, password);
+//        3.定义sql语句，这里以创建一个work_user表为例
+        String sql1 = "use dbcsdn";
+        String sql2 = "create table work_user(" +
+                "id int(5) primary key auto_increment," +
+                "username varchar(20) unique," +
+                "password varchar(20))";
+//        4.获取sql对象
+        Statement statement = connection.createStatement();
+//        5.执行sql
+        int l1 = statement.executeUpdate(sql1);
+        int l2 = statement.executeUpdate(sql2);
+
+//        6.处理结果
+        System.out.println("sql1受影响条数"+l1);
+        System.out.println("sql2受影响条数"+l2);
+
+//        7.释放资源
+        statement.close();
+        connection.close();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="三、执行步骤中类的简介"><a href="#三、执行步骤中类的简介" class="headerlink" title="三、执行步骤中类的简介"></a>三、执行步骤中类的简介</h4><p>1、DriverManager类</p>
+<p>DriverManager类下面提供的全是静态方法，只需要用类名点方法就可以调用，不需要实例化。它的作用主要有两个：</p>
+<p>1.注册驱动： registerDriver（）</p>
+<pre><code>Class.forName("com.mysql.jdbc.Driver");
+</code></pre>
+<p>其中的Driver类里面有一个静态代码块，有一句DriverManager. registerDriver（）完成驱动的注册</p>
+<p>2.获取连接：getConnection(url, username, password);<br>这个方法可以通过mysql的URL地址、数据库用户名、密码获取连接。传入的参数就是对应的URL地址：形如jdbc.mysql://ip地址:端口号/数据库名称。如果是本机连接，IP地址可以写成127.0.0.1或者localhost。如果端口号是默认的3306，可以写成缩写格式：jdbc.mysql:///数据库名</p>
+<pre><code>Connection connection = DriverManager.getConnection(url, username, password);
+</code></pre>
+<p>2.Connection类<br>connection类主要有两个作用：一是可以获取执行sql的对象，二是管理事务的功能。我们都知道数据库里面的数据局一旦改变就是永久的，所以需要一个管理事务功能验证sql语句的正确性。在mysql中事务管理通过begin开启事务，rollback回滚事务，commit提交事务。在jdbc里面通过connection类的特定方法也可以实现这三个功能。</p>
+<p>获取执行sql的对象用到的方法。<br>第一个就是普通执行sql对象：connection.createStatement()方法，返回一个Statement对象。</p>
+<pre class="line-numbers language-none"><code class="language-none">Statement statement = connection.createStatement();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<p>statement类下面有两个对数据进行操作的方法，分别是excuteUpdate（），excuteQuery（）。excuteUpdate（）这个方法主要是实现DML（操作数据）,DDL（操作数据库，操作表）的代码。执行成功之后会返回一个值，这个值就是受影响的行数。但是DDL中就算执行成功之后有可能是0，因为创建一个新的表这样的sql代码受影响行数是0。excuteQuery（）主要是实现DQL（查询语句），这个方法会返回一个resultSet对象，这个对象主要用于接受查询到的内容。</p>
+<p>演示excuteUpdate（）方法。</p>
+<pre class="line-numbers language-none"><code class="language-none">package com.example.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class jdbcdemo {
+    public static void main(String[] args) throws Exception {
+        String url = "jdbc:mysql://127.0.0.1:3306/dbcsdn";
+        String username = "root";
+        String password = "1234";
+        Connection connection = DriverManager.getConnection(url, username, password);
+
+        String sql = "insert  into work_user values " +
+                "(1,'name1','password1')," +
+                "(2,'name2','password2');";
+
+        Statement statement = connection.createStatement();
+
+        int i = statement.executeUpdate(sql);
+
+        System.out.println("受影响的行数是："+i+"行");
+
+        statement.close();
+        connection.close();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第二个是防止sql注入的prepareStatement（）方法，其中传入sql语句，可以防止sql注入，最终返回一个PrepareStatement对象。</p>
+<p>2.jdbc事务管理用法举例</p>
+<pre class="line-numbers language-none"><code class="language-none">package com.example.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class jdbcdemo {
+    public static void main(String[] args) throws Exception {
+        String url = "jdbc:mysql://127.0.0.1:3306/dbcsdn";
+        String username = "root";
+        String password = "1234";
+        Connection connection = DriverManager.getConnection(url, username, password);
+
+        String sql1 = "insert  into work_user values " +
+                "(5,'name5','password5')," +
+                "(6,'name6','password6');";
+
+        String sql2 = "update work_user set username = 'name002' where id = 2;";
+
+        Statement statement = connection.createStatement();
+
+        try {
+            // 开启事务
+            connection.setAutoCommit(false);
+
+            int l1 = statement.executeUpdate(sql1);
+            System.out.println("sql1受影响的行数是：" + l1 + "行");
+            int l2 = statement.executeUpdate(sql2);
+            System.out.println("sql2受影响行数是：" + l2 + "行");
+            // 提交事务
+            connection.commit();
+        } catch (Exception e) {
+            //回滚事务
+            connection.rollback();
+            e.printStackTrace();
+        }
+        statement.close();
+        connection.close();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>3、ResultSet类<br>作用：对DQL查询语句进行封装，返回一个resultset对象，并且可以通过特定方法获取查询结果。</p>
+<p>对DQL查询语句封装</p>
+<pre class="line-numbers language-none"><code class="language-none">ResultSet resultSet = statement.executeQuery(sql);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<p>通过特定方法获取查询结果</p>
+<p>next（）方法。返回Boolean类型，主要用于判断当前行是否有有效数据，若有就返回true，否则返回false。</p>
+<p>getXXX（）方法。通过resultSet获取数据，对应数据类型定义对应方法。传参可以为字段名，也可以是列对应的编号。</p>
+<pre class="line-numbers language-none"><code class="language-none">package com.example.jdbc;
+
+import java.sql.*;
+
+public class jdbcdemo {
+    public static void main(String[] args) throws Exception {
+        String url = "jdbc:mysql://127.0.0.1:3306/dbcsdn";
+        String username = "root";
+        String password = "1234";
+        Connection connection = DriverManager.getConnection(url, username, password);
+
+        String sql = "select * from work_user";
+
+        Statement statement = connection.createStatement();
+
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("username");
+            String psd = resultSet.getString("password");
+
+            System.out.print("id:" + id + "\t");
+            System.out.print("username:" + name + "\t");
+            System.out.println("password:" + psd);
+            System.out.println("---------------");
+        }
+        resultSet.close();
+        statement.close();
+        connection.close();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://CrazyYSY.github.io">CrazyYSY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://crazyysy.github.io/2023/05/07/di-liu-zhou-java-yu-xi/">http://crazyysy.github.io/2023/05/07/di-liu-zhou-java-yu-xi/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://CrazyYSY.github.io" target="_blank">CY_blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JAVA/">JAVA</a><a class="post-meta__tags" href="/tags/%E9%A2%84%E4%B9%A0%E4%BD%9C%E4%B8%9A/">预习作业</a></div><div class="post_share"><div class="social-share" data-image="/img/banner/5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2023/04/21/zhi-bo-she-bei-xuan-gou-zhi-nan/" title="Vup设备选购指南"><img class="cover" src="/img/banner/1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Vup设备选购指南</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/21/di-yi-zhou-java-yu-xi/" title="第一周java预习"><img class="cover" src="/img/banner/3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-21</div><div class="title">第一周java预习</div></div></a></div><div><a href="/2023/03/30/di-er-zhou-java-yu-xi/" title="第二周java预习"><img class="cover" src="/img/banner/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-30</div><div class="title">第二周java预习</div></div></a></div><div><a href="/2023/04/05/di-san-zhou-java-yu-xi/" title="第三周java预习"><img class="cover" src="/img/banner/3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-05</div><div class="title">第三周java预习</div></div></a></div><div><a href="/2023/04/20/di-wu-zhou-java-yu-xi/" title="第五周java预习"><img class="cover" src="/img/banner/1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-20</div><div class="title">第五周java预习</div></div></a></div><div><a href="/2023/04/13/di-si-zhou-java-yu-xi/" title="第四周java预习"><img class="cover" src="/img/banner/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-13</div><div class="title">第四周java预习</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CrazyYSY</div><div class="author-info__description">喜欢分享的人,收益总会大于分享</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CrazyYSY"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CrazyYSY" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:CrazyYSY@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">应邀留个友链  space.bilibili.com/3493257797437789</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC"><span class="toc-number">1.</span> <span class="toc-text">JDBC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.0.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81JDBC%E6%89%A7%E8%A1%8C%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、JDBC执行步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%89%A7%E8%A1%8C%E6%AD%A5%E9%AA%A4%E4%B8%AD%E7%B1%BB%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、执行步骤中类的简介</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/07/di-liu-zhou-java-yu-xi/" title="第六周java预习"><img src="/img/banner/5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第六周java预习"/></a><div class="content"><a class="title" href="/2023/05/07/di-liu-zhou-java-yu-xi/" title="第六周java预习">第六周java预习</a><time datetime="2023-05-07T03:23:23.000Z" title="发表于 2023-05-07 11:23:23">2023-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/21/zhi-bo-she-bei-xuan-gou-zhi-nan/" title="Vup设备选购指南"><img src="/img/banner/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vup设备选购指南"/></a><div class="content"><a class="title" href="/2023/04/21/zhi-bo-she-bei-xuan-gou-zhi-nan/" title="Vup设备选购指南">Vup设备选购指南</a><time datetime="2023-04-21T02:34:12.000Z" title="发表于 2023-04-21 10:34:12">2023-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/20/di-wu-zhou-java-yu-xi/" title="第五周java预习"><img src="/img/banner/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第五周java预习"/></a><div class="content"><a class="title" href="/2023/04/20/di-wu-zhou-java-yu-xi/" title="第五周java预习">第五周java预习</a><time datetime="2023-04-20T11:12:45.000Z" title="发表于 2023-04-20 19:12:45">2023-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/13/di-si-zhou-java-yu-xi/" title="第四周java预习"><img src="/img/banner/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第四周java预习"/></a><div class="content"><a class="title" href="/2023/04/13/di-si-zhou-java-yu-xi/" title="第四周java预习">第四周java预习</a><time datetime="2023-04-13T09:02:00.000Z" title="发表于 2023-04-13 17:02:00">2023-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/05/di-san-zhou-java-yu-xi/" title="第三周java预习"><img src="/img/banner/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第三周java预习"/></a><div class="content"><a class="title" href="/2023/04/05/di-san-zhou-java-yu-xi/" title="第三周java预习">第三周java预习</a><time datetime="2023-04-05T05:02:00.000Z" title="发表于 2023-04-05 13:02:00">2023-04-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/banner/5.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By CrazyYSY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">测试主题</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><div class="js-pjax"><script>(() => {
+  function abcjsInit() {
+    function abcjsFn() {
+      for (let abcContainer of document.getElementsByClassName("abc-music-sheet")) {
+        ABCJS.renderAbc(abcContainer, abcContainer.innerHTML, {responsive: 'resize'})
+      }
+    }
+    
+    typeof ABCJS === 'object' ? abcjsFn()
+      : getScript('https://cdn.jsdelivr.net/npm/abcjs/dist/abcjs-basic-min.min.js').then(abcjsFn)
+  }
+
+  window.pjax ? abcjsInit() : document.addEventListener('DOMContentLoaded', abcjsInit)
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'WtFrvXv4aQQ9ahSEwsfzTIr6-gzGzoHsz',
+      appKey: '3EQCeCmIgDx7ihj3KHlQwLNZ',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
